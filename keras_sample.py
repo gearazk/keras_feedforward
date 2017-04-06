@@ -41,13 +41,15 @@ def load_data():
 def init_model():
     start_time = time.time()
     print 'Compiling Model ... '
+
     model = Sequential()
+
+    #---- Layer hidden
     model.add(Dense(500, input_dim=784))
     model.add(Activation('relu'))
     model.add(Dropout(0.4))
-    model.add(Dense(300))
-    model.add(Activation('relu'))
-    model.add(Dropout(0.4))
+
+    #---- Layer output
     model.add(Dense(10))
     model.add(Activation('softmax'))
 
